@@ -97,6 +97,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserFacade.cs" />
     <EmbeddedResource Include="BasicOptionsUserControl.resx">
       <DependentUpon>BasicOptionsUserControl.cs</DependentUpon>
     </EmbeddedResource>

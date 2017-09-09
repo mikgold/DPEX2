@@ -49,6 +49,10 @@
             this.labelSelectedFriendDescription = new System.Windows.Forms.Label();
             this.textBoxSelectedFriendName = new System.Windows.Forms.TextBox();
             this.labelSelectedFriendName = new System.Windows.Forms.Label();
+            this.labelSelectedEventInfo = new System.Windows.Forms.Label();
+            this.richTextBoxSelectedEvent = new System.Windows.Forms.RichTextBox();
+            this.labelSelectedEventDescription = new System.Windows.Forms.Label();
+            this.richTextBoxSelectedEventDescription = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedFriend)).BeginInit();
             this.panelSelectedFriend.SuspendLayout();
             this.SuspendLayout();
@@ -74,14 +78,15 @@
             // listBoxEvents
             // 
             this.listBoxEvents.FormattingEnabled = true;
-            this.listBoxEvents.Location = new System.Drawing.Point(434, 83);
+            this.listBoxEvents.Location = new System.Drawing.Point(264, 83);
             this.listBoxEvents.Name = "listBoxEvents";
-            this.listBoxEvents.Size = new System.Drawing.Size(353, 264);
+            this.listBoxEvents.Size = new System.Drawing.Size(217, 251);
             this.listBoxEvents.TabIndex = 30;
+            this.listBoxEvents.SelectedIndexChanged += new System.EventHandler(this.listBoxEvents_SelectedIndexChanged);
             // 
             // buttonShowEvents
             // 
-            this.buttonShowEvents.Location = new System.Drawing.Point(434, 44);
+            this.buttonShowEvents.Location = new System.Drawing.Point(308, 45);
             this.buttonShowEvents.Name = "buttonShowEvents";
             this.buttonShowEvents.Size = new System.Drawing.Size(103, 23);
             this.buttonShowEvents.TabIndex = 29;
@@ -112,7 +117,7 @@
             this.listBoxPosts.FormattingEnabled = true;
             this.listBoxPosts.Location = new System.Drawing.Point(16, 83);
             this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(395, 264);
+            this.listBoxPosts.Size = new System.Drawing.Size(213, 251);
             this.listBoxPosts.TabIndex = 26;
             // 
             // buttonShowPosts
@@ -234,10 +239,49 @@
             this.labelSelectedFriendName.TabIndex = 33;
             this.labelSelectedFriendName.Text = "Name:";
             // 
+            // labelSelectedEventInfo
+            // 
+            this.labelSelectedEventInfo.AutoSize = true;
+            this.labelSelectedEventInfo.Location = new System.Drawing.Point(515, 83);
+            this.labelSelectedEventInfo.Name = "labelSelectedEventInfo";
+            this.labelSelectedEventInfo.Size = new System.Drawing.Size(59, 13);
+            this.labelSelectedEventInfo.TabIndex = 35;
+            this.labelSelectedEventInfo.Text = "Event Info:";
+            // 
+            // richTextBoxSelectedEvent
+            // 
+            this.richTextBoxSelectedEvent.Location = new System.Drawing.Point(512, 103);
+            this.richTextBoxSelectedEvent.Name = "richTextBoxSelectedEvent";
+            this.richTextBoxSelectedEvent.Size = new System.Drawing.Size(245, 116);
+            this.richTextBoxSelectedEvent.TabIndex = 36;
+            this.richTextBoxSelectedEvent.Text = "";
+            // 
+            // labelSelectedEventDescription
+            // 
+            this.labelSelectedEventDescription.AutoSize = true;
+            this.labelSelectedEventDescription.Location = new System.Drawing.Point(509, 241);
+            this.labelSelectedEventDescription.Name = "labelSelectedEventDescription";
+            this.labelSelectedEventDescription.Size = new System.Drawing.Size(63, 13);
+            this.labelSelectedEventDescription.TabIndex = 37;
+            this.labelSelectedEventDescription.Text = "Description:";
+            // 
+            // richTextBoxSelectedEventDescription
+            // 
+            this.richTextBoxSelectedEventDescription.Location = new System.Drawing.Point(518, 262);
+            this.richTextBoxSelectedEventDescription.Name = "richTextBoxSelectedEventDescription";
+            this.richTextBoxSelectedEventDescription.Size = new System.Drawing.Size(239, 72);
+            this.richTextBoxSelectedEventDescription.TabIndex = 39;
+            this.richTextBoxSelectedEventDescription.Text = "";
+            this.richTextBoxSelectedEventDescription.Leave += new System.EventHandler(this.richTextBoxSelectedEventDescription_Leave);
+            // 
             // BasicOptionsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.richTextBoxSelectedEventDescription);
+            this.Controls.Add(this.labelSelectedEventDescription);
+            this.Controls.Add(this.richTextBoxSelectedEvent);
+            this.Controls.Add(this.labelSelectedEventInfo);
             this.Controls.Add(this.labelSelectFriend);
             this.Controls.Add(this.panelSelectedFriend);
             this.Controls.Add(this.listBoxEvents);
@@ -285,5 +329,9 @@
         private System.Windows.Forms.Label labelSelectedFriendDescription;
         private System.Windows.Forms.TextBox textBoxSelectedFriendName;
         private System.Windows.Forms.Label labelSelectedFriendName;
+        private System.Windows.Forms.Label labelSelectedEventInfo;
+        private System.Windows.Forms.RichTextBox richTextBoxSelectedEvent;
+        private System.Windows.Forms.Label labelSelectedEventDescription;
+        private System.Windows.Forms.RichTextBox richTextBoxSelectedEventDescription;
     }
 }

@@ -157,8 +157,23 @@ namespace DP.EX01
 
         private void textBoxSelectedFriendBio_Leave(object sender, EventArgs e)
         {
-            User selectedFriend = (listBoxFriends.SelectedItem as User);
+            User selectedFriend = (listBoxFriends.SelectedItem as User); 
             selectedFriend.Bio = textBoxSelectedFriendBio.Text;
+        }
+
+        private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxEvents.SelectedItems.Count > 0)
+            {
+                Event selectedEvent = listBoxEvents.SelectedItem as Event;
+                string eventInfo = new UserFacade().getFBObjectInfo(UserFacade.eFBObjectsTypes.Event, selectedEvent);
+                richTextBoxSelectedEvent.Text = eventInfo;
+                richTextBoxSelectedEventDescription.Text = selectedEvent.Description;
+            }
+        }
+        private void richTextBoxSelectedEventDescription_Leave(object sender, EventArgs e)
+        {
+            (listBoxEvents.SelectedItem as Event).Description = richTextBoxSelectedEventDescription.Text;
         }
     }
 }
