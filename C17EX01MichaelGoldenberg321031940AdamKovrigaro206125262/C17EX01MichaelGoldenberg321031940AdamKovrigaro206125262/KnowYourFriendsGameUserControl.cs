@@ -91,7 +91,7 @@ namespace DP.EX01
                         
             if (!friendsGame.StartNewGame())
             {
-                this.Enabled = false;
+                this.Invoke(new Action(() => this.Enabled = false));
                 MessageBox.Show("We don't have enough friends to play please login to secondary app");
             }
             else

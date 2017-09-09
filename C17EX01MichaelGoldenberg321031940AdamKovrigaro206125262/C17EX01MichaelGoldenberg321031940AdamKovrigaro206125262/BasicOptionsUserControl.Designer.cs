@@ -44,14 +44,20 @@
             this.textBoxPost = new System.Windows.Forms.TextBox();
             this.buttonCheckIns = new System.Windows.Forms.Button();
             this.listBoxCheckIns = new System.Windows.Forms.ListBox();
+            this.panelSelectedFriend = new System.Windows.Forms.Panel();
+            this.textBoxSelectedFriendBio = new System.Windows.Forms.TextBox();
+            this.labelSelectedFriendDescription = new System.Windows.Forms.Label();
+            this.textBoxSelectedFriendName = new System.Windows.Forms.TextBox();
+            this.labelSelectedFriendName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedFriend)).BeginInit();
+            this.panelSelectedFriend.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSelectFriend
             // 
             this.labelSelectFriend.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.labelSelectFriend.AutoSize = true;
-            this.labelSelectFriend.Location = new System.Drawing.Point(406, 391);
+            this.labelSelectFriend.Location = new System.Drawing.Point(399, 350);
             this.labelSelectFriend.Name = "labelSelectFriend";
             this.labelSelectFriend.Size = new System.Drawing.Size(190, 13);
             this.labelSelectFriend.TabIndex = 33;
@@ -59,9 +65,9 @@
             // 
             // pictureBoxSelectedFriend
             // 
-            this.pictureBoxSelectedFriend.Location = new System.Drawing.Point(434, 407);
+            this.pictureBoxSelectedFriend.Location = new System.Drawing.Point(9, 5);
             this.pictureBoxSelectedFriend.Name = "pictureBoxSelectedFriend";
-            this.pictureBoxSelectedFriend.Size = new System.Drawing.Size(126, 113);
+            this.pictureBoxSelectedFriend.Size = new System.Drawing.Size(91, 64);
             this.pictureBoxSelectedFriend.TabIndex = 32;
             this.pictureBoxSelectedFriend.TabStop = false;
             // 
@@ -183,12 +189,57 @@
             this.listBoxCheckIns.Size = new System.Drawing.Size(179, 173);
             this.listBoxCheckIns.TabIndex = 18;
             // 
+            // panelSelectedFriend
+            // 
+            this.panelSelectedFriend.Controls.Add(this.textBoxSelectedFriendBio);
+            this.panelSelectedFriend.Controls.Add(this.labelSelectedFriendDescription);
+            this.panelSelectedFriend.Controls.Add(this.textBoxSelectedFriendName);
+            this.panelSelectedFriend.Controls.Add(this.labelSelectedFriendName);
+            this.panelSelectedFriend.Controls.Add(this.pictureBoxSelectedFriend);
+            this.panelSelectedFriend.Location = new System.Drawing.Point(402, 364);
+            this.panelSelectedFriend.Name = "panelSelectedFriend";
+            this.panelSelectedFriend.Size = new System.Drawing.Size(200, 203);
+            this.panelSelectedFriend.TabIndex = 34;
+            // 
+            // textBoxSelectedFriendBio
+            // 
+            this.textBoxSelectedFriendBio.Location = new System.Drawing.Point(9, 132);
+            this.textBoxSelectedFriendBio.Name = "textBoxSelectedFriendBio";
+            this.textBoxSelectedFriendBio.Size = new System.Drawing.Size(178, 20);
+            this.textBoxSelectedFriendBio.TabIndex = 36;
+            this.textBoxSelectedFriendBio.Leave += new System.EventHandler(this.textBoxSelectedFriendBio_Leave);
+            // 
+            // labelSelectedFriendDescription
+            // 
+            this.labelSelectedFriendDescription.AutoSize = true;
+            this.labelSelectedFriendDescription.Location = new System.Drawing.Point(6, 104);
+            this.labelSelectedFriendDescription.Name = "labelSelectedFriendDescription";
+            this.labelSelectedFriendDescription.Size = new System.Drawing.Size(57, 13);
+            this.labelSelectedFriendDescription.TabIndex = 35;
+            this.labelSelectedFriendDescription.Text = "Biography:";
+            // 
+            // textBoxSelectedFriendName
+            // 
+            this.textBoxSelectedFriendName.Location = new System.Drawing.Point(50, 78);
+            this.textBoxSelectedFriendName.Name = "textBoxSelectedFriendName";
+            this.textBoxSelectedFriendName.Size = new System.Drawing.Size(137, 20);
+            this.textBoxSelectedFriendName.TabIndex = 34;
+            // 
+            // labelSelectedFriendName
+            // 
+            this.labelSelectedFriendName.AutoSize = true;
+            this.labelSelectedFriendName.Location = new System.Drawing.Point(6, 78);
+            this.labelSelectedFriendName.Name = "labelSelectedFriendName";
+            this.labelSelectedFriendName.Size = new System.Drawing.Size(38, 13);
+            this.labelSelectedFriendName.TabIndex = 33;
+            this.labelSelectedFriendName.Text = "Name:";
+            // 
             // BasicOptionsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelSelectFriend);
-            this.Controls.Add(this.pictureBoxSelectedFriend);
+            this.Controls.Add(this.panelSelectedFriend);
             this.Controls.Add(this.listBoxEvents);
             this.Controls.Add(this.buttonShowEvents);
             this.Controls.Add(this.listBoxAlbums);
@@ -203,8 +254,10 @@
             this.Controls.Add(this.buttonCheckIns);
             this.Controls.Add(this.listBoxCheckIns);
             this.Name = "BasicOptionsUserControl";
-            this.Size = new System.Drawing.Size(799, 586);
+            this.Size = new System.Drawing.Size(812, 602);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedFriend)).EndInit();
+            this.panelSelectedFriend.ResumeLayout(false);
+            this.panelSelectedFriend.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +280,10 @@
         private System.Windows.Forms.TextBox textBoxPost;
         private System.Windows.Forms.Button buttonCheckIns;
         private System.Windows.Forms.ListBox listBoxCheckIns;
+        private System.Windows.Forms.Panel panelSelectedFriend;
+        private System.Windows.Forms.TextBox textBoxSelectedFriendBio;
+        private System.Windows.Forms.Label labelSelectedFriendDescription;
+        private System.Windows.Forms.TextBox textBoxSelectedFriendName;
+        private System.Windows.Forms.Label labelSelectedFriendName;
     }
 }

@@ -73,6 +73,8 @@ namespace DP.EX01
             {
                 User selectedFriend = listBoxFriends.SelectedItem as User;
                 pictureBoxSelectedFriend.LoadAsync(selectedFriend.PictureNormalURL);
+                textBoxSelectedFriendName.Text = selectedFriend.Name;
+                textBoxSelectedFriendBio.Text = selectedFriend.Bio ?? "No bio to show :(";
             }
         }
 
@@ -152,5 +154,11 @@ namespace DP.EX01
         }
 
         #endregion
+
+        private void textBoxSelectedFriendBio_Leave(object sender, EventArgs e)
+        {
+            User selectedFriend = (listBoxFriends.SelectedItem as User);
+            selectedFriend.Bio = textBoxSelectedFriendBio.Text;
+        }
     }
 }
