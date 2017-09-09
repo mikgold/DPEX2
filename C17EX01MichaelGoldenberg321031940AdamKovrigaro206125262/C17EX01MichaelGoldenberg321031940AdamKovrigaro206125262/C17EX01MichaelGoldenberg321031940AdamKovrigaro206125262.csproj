@@ -70,7 +70,7 @@
       <DependentUpon>CheckInUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FacebookUtilities.cs" />
-    <Compile Include="ICheckInBuilder.cs" />
+    <Compile Include="AbstractCheckInBuilder.cs" />
     <Compile Include="KnowYourFriendsGameBuilder.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

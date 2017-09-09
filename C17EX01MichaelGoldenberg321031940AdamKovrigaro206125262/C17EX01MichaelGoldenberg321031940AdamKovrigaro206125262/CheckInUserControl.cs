@@ -74,13 +74,24 @@ namespace DP.EX01
 
             List<string> selectedFriendsNames = panelCheckBox.Controls.OfType<CheckBox>()
                                       .Where(r => r.Checked).Select(r => r.Text).ToList<string>();
-            builder.
-                PlaceId(comboBoxLocations.SelectedItem.ToString()).
+            Checkin checkIn = builder.
+                PlaceId(comboBoxLocations.SelectedItem != null ? comboBoxLocations.SelectedItem.ToString() : null).
                 Message(textBoxMessage.Text).
                 Link(textBoxLink.Text).
-                PicutreUrl((selectedRadio.Tag as PictureBox).ImageLocation).
+                PicutreUrl(selectedRadio != null ? (selectedRadio.Tag as PictureBox).ImageLocation : null).
                 TaggedFriendsNames(selectedFriendsNames).
-                Build();           
+                Build();
+            
+            if (checkIn == null)
+            {
+                MessageBox.Show("You must select a place");
+            }
+            else
+            {
+                MessageBox.Show("Checked in Succesfully");
+            }
+            
+                    
         }
 
         private void CheckInUserControl_Load(object sender, EventArgs e)
