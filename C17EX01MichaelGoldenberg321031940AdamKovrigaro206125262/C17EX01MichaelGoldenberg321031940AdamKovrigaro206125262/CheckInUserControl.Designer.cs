@@ -51,16 +51,17 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.labelNotEnoughFriends = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelRadios.SuspendLayout();
             this.panelCheckBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSumbit
@@ -223,6 +224,7 @@
             // panelCheckBox
             // 
             this.panelCheckBox.Controls.Add(this.checkBox3);
+            this.panelCheckBox.Controls.Add(this.labelNotEnoughFriends);
             this.panelCheckBox.Controls.Add(this.checkBox2);
             this.panelCheckBox.Controls.Add(this.checkBox1);
             this.panelCheckBox.Controls.Add(this.pictureBox4);
@@ -269,6 +271,15 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(100, 75);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(132, 3);
@@ -278,14 +289,16 @@
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox6
+            // labelNotEnoughFriends
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 75);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
+            this.labelNotEnoughFriends.AutoSize = true;
+            this.labelNotEnoughFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelNotEnoughFriends.Location = new System.Drawing.Point(59, 31);
+            this.labelNotEnoughFriends.Name = "labelNotEnoughFriends";
+            this.labelNotEnoughFriends.Size = new System.Drawing.Size(221, 20);
+            this.labelNotEnoughFriends.TabIndex = 17;
+            this.labelNotEnoughFriends.Text = "you don\'t have enough friends";
+            this.labelNotEnoughFriends.Visible = false;
             // 
             // CheckInUserControl
             // 
@@ -313,8 +326,8 @@
             this.panelCheckBox.ResumeLayout(false);
             this.panelCheckBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +359,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label labelNotEnoughFriends;
     }
 }

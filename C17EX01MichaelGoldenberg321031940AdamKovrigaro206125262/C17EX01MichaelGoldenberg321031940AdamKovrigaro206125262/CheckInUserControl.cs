@@ -32,20 +32,34 @@ namespace DP.EX01
 
         private void loadFriendImages()
         {
-            checkBox1.Invoke(new Action(() => checkBox1.Text = "Desigi Pat"));
-            checkBox2.Invoke(new Action(() => checkBox2.Text = "Desig Onn"));
-            checkBox3.Invoke(new Action(() => checkBox3.Text = "Dov Kuala"));
+            labelNotEnoughFriends.Invoke(new Action(() => labelNotEnoughFriends.Visible = false));
+            panelCheckBox.Invoke(new Action(() => panelCheckBox.Enabled = false));
+            
 
 
             User user1 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Desigi Pat"));
             if (user1 == null)
             {
-                MessageBox.Show("We don't have enough friends to play please login to secondary app");
+                labelNotEnoughFriends.Invoke(new Action(() => labelNotEnoughFriends.Visible = true));
+                panelCheckBox.Invoke(new Action(() => panelCheckBox.Enabled = false));
+                string emptyPictureUrl = "https://i.imgur.com/XqQBCA3.jpg";
+                checkBox1.Invoke(new Action(() => checkBox1.Text = ""));
+                checkBox2.Invoke(new Action(() => checkBox2.Text = ""));
+                checkBox3.Invoke(new Action(() => checkBox3.Text = ""));
+                pictureBox4.Invoke(new Action(() => pictureBox4.Load(emptyPictureUrl)));
+                pictureBox5.Invoke(new Action(() => pictureBox5.Load(emptyPictureUrl)));
+                pictureBox6.Invoke(new Action(() => pictureBox6.Load(emptyPictureUrl)));
             }
             else {
+
                 User user2 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Desig Onn"));
                 User user3 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Dov Kuala"));
 
+                panelCheckBox.Invoke(new Action(() => panelCheckBox.Enabled = true));
+                labelNotEnoughFriends.Invoke(new Action(() => labelNotEnoughFriends.Visible = false));
+                checkBox1.Invoke(new Action(() => checkBox1.Text = "Desigi Pat"));
+                checkBox2.Invoke(new Action(() => checkBox2.Text = "Desig Onn"));
+                checkBox3.Invoke(new Action(() => checkBox3.Text = "Dov Kuala"));
                 pictureBox4.Invoke(new Action(() => pictureBox4.Load(user1.PictureNormalURL)));
                 pictureBox5.Invoke(new Action(() => pictureBox5.Load(user2.PictureNormalURL)));
                 pictureBox6.Invoke(new Action(() => pictureBox6.Load(user3.PictureNormalURL)));
