@@ -24,10 +24,10 @@ namespace DP.EX01
 
         private void fetchCheckins()
         {
-            listBoxCheckIns.Items.Clear();
+            listBoxCheckIns.Invoke(new Action(() => listBoxCheckIns.Items.Clear()));
             foreach (Checkin checkin in FacebookUtilities.LoggedInUser.Checkins)
             {
-                listBoxCheckIns.Items.Add(checkin.Place.Name);
+                listBoxCheckIns.Invoke(new Action(() => listBoxCheckIns.Items.Add(checkin.Place.Name)));
             }
 
             if (FacebookUtilities.LoggedInUser.Checkins.Count == 0)
