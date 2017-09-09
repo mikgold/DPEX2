@@ -62,7 +62,16 @@
     <Compile Include="BasicOptionsUserControl.Designer.cs">
       <DependentUpon>BasicOptionsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckInBuilder.cs" />
+    <Compile Include="CheckInUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckInUserControl.Designer.cs">
+      <DependentUpon>CheckInUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacebookUtilities.cs" />
+    <Compile Include="ICheckInBuilder.cs" />
+    <Compile Include="KnowYourFriendsGameBuilder.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +92,16 @@
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BasicOptionsUserControl.resx">
       <DependentUpon>BasicOptionsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckInUserControl.resx">
+      <DependentUpon>CheckInUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -95,14 +112,16 @@
     <EmbeddedResource Include="LikedYourPostTheMost.resx">
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Diagrams.docx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ReadMe.txt" />
   </ItemGroup>

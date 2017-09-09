@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using System.Threading;
 
 namespace DP.EX01
 {
@@ -37,7 +38,7 @@ namespace DP.EX01
 
         private void buttonCheckIns_Click(object sender, EventArgs e)
         {
-            fetchCheckins();
+            new Thread(fetchCheckins).Start();            
         }
 
         private void buttonPostStatus_Click(object sender, EventArgs e)
@@ -48,16 +49,16 @@ namespace DP.EX01
 
         private void buttonShowFreinds_Click(object sender, EventArgs e)
         {
-            fetchFriends();
+            new Thread(fetchFriends).Start();
         }
 
         private void fetchFriends()
         {
-            listBoxFriends.Items.Clear();
-            listBoxFriends.DisplayMember = "Name";
+            listBoxFriends.Invoke(new Action(() => listBoxFriends.Items.Clear()));
+            listBoxFriends.Invoke(new Action(() => listBoxFriends.DisplayMember = "Name"));
             foreach (User friend in FacebookUtilities.LoggedInUser.Friends)
             {
-                listBoxFriends.Items.Add(friend);
+                listBoxFriends.Invoke(new Action(() => listBoxFriends.Items.Add(friend)));
             }
 
             if (FacebookUtilities.LoggedInUser.Friends.Count == 0)
@@ -77,16 +78,16 @@ namespace DP.EX01
 
         private void buttonShowEvents_Click(object sender, EventArgs e)
         {
-            fetchEvents();
+            new Thread(fetchEvents).Start();
         }
 
         private void fetchEvents()
         {
-            listBoxEvents.Items.Clear();
-            listBoxEvents.DisplayMember = "Name";
+            listBoxEvents.Invoke(new Action(() => listBoxEvents.Items.Clear()));
+            listBoxEvents.Invoke(new Action(() => listBoxEvents.DisplayMember = "Name"));
             foreach (Event fbEvent in FacebookUtilities.LoggedInUser.Events)
             {
-                listBoxEvents.Items.Add(fbEvent);
+                listBoxEvents.Invoke(new Action(() => listBoxEvents.Items.Add(fbEvent)));
             }
 
             if (FacebookUtilities.LoggedInUser.Events.Count == 0)
@@ -102,25 +103,25 @@ namespace DP.EX01
 
         private void buttonShowPosts_Click(object sender, EventArgs e)
         {
-            fetchPosts();
+            new Thread(fetchPosts).Start();
         }
 
         private void fetchPosts()
         {
-            listBoxPosts.Items.Clear();
+            listBoxPosts.Invoke(new Action(() => listBoxPosts.Items.Clear()));
             foreach (Post post in FacebookUtilities.LoggedInUser.Posts)
             {
                 if (post.Message != null)
                 {
-                    listBoxPosts.Items.Add(post.Message);
+                    listBoxPosts.Invoke(new Action(() => listBoxPosts.Items.Add(post.Message)));
                 }
                 else if (post.Caption != null)
                 {
-                    listBoxPosts.Items.Add(post.Caption);
+                    listBoxPosts.Invoke(new Action(() => listBoxPosts.Items.Add(post.Caption)));
                 }
                 else
                 {
-                    listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+                    listBoxPosts.Invoke(new Action(() => listBoxPosts.Items.Add(string.Format("[{0}]", post.Type))));
                 }
             }
 
@@ -132,16 +133,16 @@ namespace DP.EX01
 
         private void buttonAlbums_Click(object sender, EventArgs e)
         {
-            fetchAlbums();
+            new Thread(fetchAlbums).Start();
         }
 
         private void fetchAlbums()
         {
-            listBoxAlbums.Items.Clear();
-            listBoxAlbums.DisplayMember = "Name";
+            listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Clear()));
+            listBoxAlbums.Invoke(new Action(() => listBoxAlbums.DisplayMember = "Name"));
             foreach (Album album in FacebookUtilities.LoggedInUser.Albums)
             {
-                listBoxAlbums.Items.Add(album);
+                listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Add(album)));
             }
 
             if (FacebookUtilities.LoggedInUser.Albums.Count == 0)

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
+using System.Threading;
 
 namespace DP.EX01
 {
     public class KnowYourFriendsGame
     {
-        private const int k_maxLevel = 10;
         private const int k_maxScore = 10;
         private const int k_halfScore = 5;
 
@@ -21,6 +21,8 @@ namespace DP.EX01
         private string m_lastAnswerDesc;
         private IEnumerable<User> m_freindsList;
         private User m_currentFriend;
+        private int m_secondsPerLevel = 20;
+        private int m_friendsCount = 10;
 
         public User CurrentFriend
         {
@@ -32,18 +34,29 @@ namespace DP.EX01
             get { return m_nLevel; }
         }
 
+        public int SecondsPerLevel
+        {
+            get { return m_secondsPerLevel; }
+        }
+
+        public int FriendsCount
+        {
+            get { return m_friendsCount; }
+        }
+
         /// <summary>
         /// Start a new game
         /// </summary>
         /// <returns>whether  the game was started succesfully</returns>
         public bool StartNewGame()
         {
-            this.m_nLevel = 1;
+            this.m_nLevel = 1;            
             this.m_score = 0;
             this.m_nUsedClues = 0;
             this.m_nCorrectAnswers = 0;
             this.m_usedClue = false;
             m_freindsList = FacebookUtilities.GetTenRandomFriends();
+
             if (m_freindsList != null)
             {
                 m_currentFriend = this.m_freindsList.ElementAt(0);
@@ -62,7 +75,7 @@ namespace DP.EX01
         /// <returns>whether we have more rounds to play</returns>
         public bool NextRound()
         {
-            if (this.m_nLevel == k_maxLevel)
+            if (this.m_nLevel == m_friendsCount)
             {
                 return false;
             }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DP.EX01
 {
@@ -16,18 +17,24 @@ namespace DP.EX01
 
         public KnowYourFriendsGameUserControl()
         {
-            InitializeComponent();
+            InitializeComponent();            
             friendsGame = new KnowYourFriendsGame();
+            labelSeconds.Text = friendsGame.SecondsPerLevel + " sec";
         }
 
         public void StartGame()
         {
-            newGame();
+            new Thread(newGame).Start();
         }
 
         private void buttonSkip_Click(object sender, EventArgs e)
         {
             nextFriend();
+            incorrectAnswer();
+        }
+
+        private void incorrectAnswer()
+        {
             labelLastAnswer.ForeColor = Color.Red;
             labelLastAnswer.Text = "Incorrect!! " + friendsGame.GetLastAnswerDescription();
         }
@@ -38,9 +45,10 @@ namespace DP.EX01
             {
                 labelGameLevel.Text = "Game over";
                 MessageBox.Show("The game is over press the new game button");
+                timerLevel.Stop();
             }
             else
-            {
+            {                
                 fetchCurrentFriendInGame();
             }
         }
@@ -48,10 +56,11 @@ namespace DP.EX01
         private void fetchCurrentFriendInGame()
         {
             pictureBox1.LoadAsync(friendsGame.CurrentFriend.PictureLargeURL);
-            labelClue.Text = "You Have one clue";
-            textBoxNameInGame.Text = string.Empty;
-            labelScore.Text = friendsGame.GetScoreText();
-            labelGameLevel.Text = "Level: " + friendsGame.Level;
+            labelClue.Invoke(new Action(() => labelClue.Text = "You Have one clue"));
+            textBoxNameInGame.Invoke(new Action(() => textBoxNameInGame.Text = string.Empty));
+            labelScore.Invoke(new Action(() => labelScore.Text = friendsGame.GetScoreText()));
+            labelGameLevel.Invoke(new Action(() => labelGameLevel.Text = "Level: " + friendsGame.Level));
+            labelSeconds.Invoke(new Action(() => labelSeconds.Text = friendsGame.SecondsPerLevel + " sec"));
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -67,8 +76,7 @@ namespace DP.EX01
             }
             else
             {
-                labelLastAnswer.ForeColor = Color.Red;
-                labelLastAnswer.Text = "Last answer was  incorrect!! " + friendsGame.GetLastAnswerDescription();
+                incorrectAnswer();
             }
         }
 
@@ -79,7 +87,7 @@ namespace DP.EX01
 
         private void newGame()
         {
-            labelLastAnswer.Text = string.Empty;
+            labelLastAnswer.Invoke(new Action(() => labelLastAnswer.Text = string.Empty));
                         
             if (!friendsGame.StartNewGame())
             {
@@ -89,6 +97,7 @@ namespace DP.EX01
             else
             {
                 fetchCurrentFriendInGame();
+                labelLastAnswer.Invoke(new Action(() => timerLevel.Start()));
             }            
         }
 
@@ -104,5 +113,21 @@ namespace DP.EX01
             }
             
         }
+
+        private void timerLevel_Tick(object sender, EventArgs e)
+        {
+            char[] txt = { ' ', 's' };
+            int seconds = int.Parse(labelSeconds.Text.Split(txt)[0]);
+            if (seconds > 0)
+            {
+                labelSeconds.Text = --seconds + " sec";
+            }
+            else
+            {
+                nextFriend();
+                incorrectAnswer();
+            }
+        }
+
     }
 }

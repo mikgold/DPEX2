@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DP.EX01
 {
@@ -21,7 +22,7 @@ namespace DP.EX01
 
             foreach (KeyValuePair<string, int> friend in sortedDict)
             {
-                listBoxMostLikesFriends.Items.Add(friend.Key + string.Format("  likes count:({0})", friend.Value));
+                listBoxMostLikesFriends.Invoke(new Action(() => listBoxMostLikesFriends.Items.Add(friend.Key + string.Format("  likes count:({0})", friend.Value))));
             }
 
             if (dicLikeStats.Count == 0)
@@ -38,7 +39,7 @@ namespace DP.EX01
 
         public void BindData()
         {
-            fetchLikeStats();
+            new Thread(fetchLikeStats).Start();
         }
     }
 }

@@ -34,6 +34,10 @@ namespace DP.EX01
             {
                 this.BeginInvoke(new Action(likedYourPostTheMostControl.BindData));
             }
+            else if (e.TabPageIndex == 3)
+            {
+                this.BeginInvoke(new Action(checkInUserControl1.BindData));
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

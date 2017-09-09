@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelLastAnswer = new System.Windows.Forms.Label();
             this.labelGameLevel = new System.Windows.Forms.Label();
             this.buttonNewGame = new System.Windows.Forms.Button();
@@ -41,6 +42,9 @@
             this.labelEnterName = new System.Windows.Forms.Label();
             this.labelInstructions = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelT = new System.Windows.Forms.Label();
+            this.timerLevel = new System.Windows.Forms.Timer(this.components);
+            this.labelSeconds = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,10 +162,35 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // labelT
+            // 
+            this.labelT.AutoSize = true;
+            this.labelT.Location = new System.Drawing.Point(225, 225);
+            this.labelT.Name = "labelT";
+            this.labelT.Size = new System.Drawing.Size(29, 13);
+            this.labelT.TabIndex = 24;
+            this.labelT.Text = "time:";
+            // 
+            // timerLevel
+            // 
+            this.timerLevel.Interval = 1000;
+            this.timerLevel.Tick += new System.EventHandler(this.timerLevel_Tick);
+            // 
+            // labelSeconds
+            // 
+            this.labelSeconds.AutoSize = true;
+            this.labelSeconds.Location = new System.Drawing.Point(261, 225);
+            this.labelSeconds.Name = "labelSeconds";
+            this.labelSeconds.Size = new System.Drawing.Size(39, 13);
+            this.labelSeconds.TabIndex = 25;
+            this.labelSeconds.Text = "20 sec";
+            // 
             // KnowYourFriendsGameUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelSeconds);
+            this.Controls.Add(this.labelT);
             this.Controls.Add(this.labelLastAnswer);
             this.Controls.Add(this.labelGameLevel);
             this.Controls.Add(this.buttonNewGame);
@@ -196,5 +225,8 @@
         private System.Windows.Forms.Label labelEnterName;
         private System.Windows.Forms.Label labelInstructions;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelT;
+        private System.Windows.Forms.Timer timerLevel;
+        private System.Windows.Forms.Label labelSeconds;
     }
 }
