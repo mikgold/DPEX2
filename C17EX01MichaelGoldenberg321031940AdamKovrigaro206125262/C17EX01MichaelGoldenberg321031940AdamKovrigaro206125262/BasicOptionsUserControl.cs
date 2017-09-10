@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
 using System.Threading;
+using FacebookWrapper.ObjectModel;
 
 namespace DP.EX01
 {
@@ -157,7 +157,7 @@ namespace DP.EX01
 
         private void textBoxSelectedFriendBio_Leave(object sender, EventArgs e)
         {
-            User selectedFriend = (listBoxFriends.SelectedItem as User); 
+            User selectedFriend = listBoxFriends.SelectedItem as User; 
             selectedFriend.Bio = textBoxSelectedFriendBio.Text;
         }
 

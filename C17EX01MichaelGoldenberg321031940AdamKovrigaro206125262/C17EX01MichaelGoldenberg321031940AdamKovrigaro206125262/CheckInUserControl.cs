@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
 using System.Threading;
+using FacebookWrapper.ObjectModel;
 
 namespace DP.EX01
 {
@@ -23,6 +23,7 @@ namespace DP.EX01
             radioButton1.Tag = pictureBox1;
             radioButton2.Tag = pictureBox2;
             radioButton3.Tag = pictureBox3;
+            comboBoxLocations.DataSource = CheckInPlaces.PlacesData.Keys.ToList();
         }
 
         public void BindData()
@@ -41,9 +42,9 @@ namespace DP.EX01
                 labelNotEnoughFriends.Invoke(new Action(() => labelNotEnoughFriends.Visible = true));
                 panelCheckBox.Invoke(new Action(() => panelCheckBox.Enabled = false));
                 string emptyPictureUrl = "https://i.imgur.com/XqQBCA3.jpg";
-                checkBox1.Invoke(new Action(() => checkBox1.Text = ""));
-                checkBox2.Invoke(new Action(() => checkBox2.Text = ""));
-                checkBox3.Invoke(new Action(() => checkBox3.Text = ""));
+                checkBox1.Invoke(new Action(() => checkBox1.Text = string.Empty));
+                checkBox2.Invoke(new Action(() => checkBox2.Text = string.Empty));
+                checkBox3.Invoke(new Action(() => checkBox3.Text = string.Empty));
                 pictureBox4.Invoke(new Action(() => pictureBox4.Load(emptyPictureUrl)));
                 pictureBox5.Invoke(new Action(() => pictureBox5.Load(emptyPictureUrl)));
                 pictureBox6.Invoke(new Action(() => pictureBox6.Load(emptyPictureUrl)));
@@ -72,13 +73,13 @@ namespace DP.EX01
 
             List<string> selectedFriendsNames = panelCheckBox.Controls.OfType<CheckBox>()
                                       .Where(r => r.Checked).Select(r => r.Text).ToList<string>();
-            Checkin checkIn = builder.
-                PlaceId(comboBoxLocations.SelectedItem != null ? comboBoxLocations.SelectedItem.ToString() : null).
-                Message(textBoxMessage.Text).
-                Link(textBoxLink.Text).
-                PicutreUrl(selectedRadio != null ? (selectedRadio.Tag as PictureBox).ImageLocation : null).
-                TaggedFriendsNames(selectedFriendsNames).
-                Build();
+            Checkin checkIn = builder
+                .PlaceId(comboBoxLocations.SelectedItem != null ? comboBoxLocations.SelectedItem.ToString() : null)
+                .Message(textBoxMessage.Text)
+                .Link(textBoxLink.Text)
+                .PicutreUrl(selectedRadio != null ? (selectedRadio.Tag as PictureBox).ImageLocation : null)
+                .TaggedFriendsNames(selectedFriendsNames)
+                .Build();
             
             if (checkIn == null)
             {

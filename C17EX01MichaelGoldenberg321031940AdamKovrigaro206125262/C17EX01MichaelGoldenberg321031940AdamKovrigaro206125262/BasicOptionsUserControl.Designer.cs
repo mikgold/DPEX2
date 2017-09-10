@@ -254,7 +254,7 @@
             this.richTextBoxSelectedEvent.Name = "richTextBoxSelectedEvent";
             this.richTextBoxSelectedEvent.Size = new System.Drawing.Size(245, 116);
             this.richTextBoxSelectedEvent.TabIndex = 36;
-            this.richTextBoxSelectedEvent.Text = "";
+            this.richTextBoxSelectedEvent.Text = string.Empty;
             // 
             // labelSelectedEventDescription
             // 
@@ -271,7 +271,7 @@
             this.richTextBoxSelectedEventDescription.Name = "richTextBoxSelectedEventDescription";
             this.richTextBoxSelectedEventDescription.Size = new System.Drawing.Size(239, 72);
             this.richTextBoxSelectedEventDescription.TabIndex = 39;
-            this.richTextBoxSelectedEventDescription.Text = "";
+            this.richTextBoxSelectedEventDescription.Text = string.Empty;
             this.richTextBoxSelectedEventDescription.Leave += new System.EventHandler(this.richTextBoxSelectedEventDescription_Leave);
             // 
             // BasicOptionsUserControl

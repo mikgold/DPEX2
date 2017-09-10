@@ -6,24 +6,14 @@ using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 
 namespace DP.EX01
-{
-    public static class Places{
-        public static Dictionary<string, string> places = new Dictionary<string, string>() {
-            {"קניון עזריאלי","160830340635663"},
-            {"קניון גבעתיים","358198677205"},
-            {"הקניון הגדול","107809162598134"},
-            {"האקדמית תא יפו","172690942762150"}
-        };
-    }
-
-    class CheckInBuilder : AbstractCheckInBuilder
-    {
-        
+{    
+    public class CheckInBuilder : AbstractCheckInBuilder
+    {        
         public CheckInBuilder PlaceId(string i_placeName)
         {   
             if (i_placeName != null)
             {
-                this.m_placeId = Places.places[i_placeName];
+                this.m_placeId = CheckInPlaces.PlacesData[i_placeName];
             }
             
             return this;
@@ -61,7 +51,7 @@ namespace DP.EX01
         {
             if (i_taggedFriendsNames != null && i_taggedFriendsNames.Count() > 0)
             {
-                string strTaggedFriendsId = "";
+                string strTaggedFriendsId = string.Empty;
                 foreach (string name in i_taggedFriendsNames)
                 {
                     User currentUser = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == name));
@@ -77,14 +67,12 @@ namespace DP.EX01
 
         public Checkin Build()
         {
-            if (String.IsNullOrEmpty(this.m_placeId))
+            if (string.IsNullOrEmpty(this.m_placeId))
             {
                 return null;
             }
 
-            var a = 1;
-            return new Checkin();
-            //return FacebookUtilities.LoggedInUser.Checkin(m_placeId, m_locationCoordinates, m_message, m_link, m_picutreUrl, m_taggedFriendsIds);
+            return FacebookUtilities.LoggedInUser.Checkin(m_placeId, m_locationCoordinates, m_message, m_link, m_picutreUrl, m_taggedFriendsIds);
         }
     }
 }

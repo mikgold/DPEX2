@@ -7,7 +7,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace DP.EX01
 {
-    abstract class AbstractCheckInBuilder
+    public abstract class AbstractCheckInBuilder
     {
         protected string m_placeId;
         protected string m_locationCoordinates;

@@ -1,0 +1,3 @@
+C:\Users\m\Desktop\DPEX2\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\bin\Debug\DP.EX01.exe.config
+C:\Users\m\Desktop\DPEX2\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\obj\Debug\DP.EX01.exe
+C:\Users\m\Desktop\DPEX2\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\C17EX01MichaelGoldenberg321031940AdamKovrigaro206125262\obj\Debug\DP.EX01.pdb

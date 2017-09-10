@@ -49,12 +49,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panelCheckBox = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.labelNotEnoughFriends = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.labelNotEnoughFriends = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -108,11 +108,6 @@
             // comboBoxLocations
             // 
             this.comboBoxLocations.FormattingEnabled = true;
-            this.comboBoxLocations.Items.AddRange(new object[] {
-            "קניון עזריאלי",
-            "קניון גבעתיים",
-            "הקניון הגדול",
-            "האקדמית תא יפו"});
             this.comboBoxLocations.Location = new System.Drawing.Point(84, 61);
             this.comboBoxLocations.Name = "comboBoxLocations";
             this.comboBoxLocations.Size = new System.Drawing.Size(121, 21);
@@ -245,6 +240,17 @@
             this.checkBox3.TabIndex = 2;
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // labelNotEnoughFriends
+            // 
+            this.labelNotEnoughFriends.AutoSize = true;
+            this.labelNotEnoughFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelNotEnoughFriends.Location = new System.Drawing.Point(59, 31);
+            this.labelNotEnoughFriends.Name = "labelNotEnoughFriends";
+            this.labelNotEnoughFriends.Size = new System.Drawing.Size(221, 20);
+            this.labelNotEnoughFriends.TabIndex = 17;
+            this.labelNotEnoughFriends.Text = "you don\'t have enough friends";
+            this.labelNotEnoughFriends.Visible = false;
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -289,17 +295,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
-            // 
-            // labelNotEnoughFriends
-            // 
-            this.labelNotEnoughFriends.AutoSize = true;
-            this.labelNotEnoughFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelNotEnoughFriends.Location = new System.Drawing.Point(59, 31);
-            this.labelNotEnoughFriends.Name = "labelNotEnoughFriends";
-            this.labelNotEnoughFriends.Size = new System.Drawing.Size(221, 20);
-            this.labelNotEnoughFriends.TabIndex = 17;
-            this.labelNotEnoughFriends.Text = "you don\'t have enough friends";
-            this.labelNotEnoughFriends.Visible = false;
             // 
             // CheckInUserControl
             // 
