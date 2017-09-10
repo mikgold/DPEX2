@@ -43,6 +43,7 @@ namespace DP.EX01
                     FBObjectInfo = null;
                     break;
             }
+
             return FBObjectInfo;
         }
 

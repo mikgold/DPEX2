@@ -111,7 +111,6 @@ namespace DP.EX01
             {
                 MessageBox.Show("Something went wrong try again later");
             }
-            
         }
 
         private void timerLevel_Tick(object sender, EventArgs e)
@@ -128,6 +127,5 @@ namespace DP.EX01
                 incorrectAnswer();
             }
         }
-
     }
 }

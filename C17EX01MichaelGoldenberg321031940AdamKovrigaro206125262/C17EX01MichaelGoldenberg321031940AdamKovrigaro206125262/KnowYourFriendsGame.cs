@@ -66,7 +66,6 @@ namespace DP.EX01
             {
                 return false;
             }
-
         }
 
         /// <summary>

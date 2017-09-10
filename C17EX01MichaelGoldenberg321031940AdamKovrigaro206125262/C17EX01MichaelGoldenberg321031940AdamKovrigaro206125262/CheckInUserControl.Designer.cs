@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -317,7 +318,6 @@
             this.Controls.Add(this.buttonSumbit);
             this.Name = "CheckInUserControl";
             this.Size = new System.Drawing.Size(691, 479);
-            this.Load += new System.EventHandler(this.CheckInUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

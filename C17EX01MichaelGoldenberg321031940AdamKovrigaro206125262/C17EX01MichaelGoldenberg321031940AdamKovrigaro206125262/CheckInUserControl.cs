@@ -35,8 +35,6 @@ namespace DP.EX01
             labelNotEnoughFriends.Invoke(new Action(() => labelNotEnoughFriends.Visible = false));
             panelCheckBox.Invoke(new Action(() => panelCheckBox.Enabled = false));
             
-
-
             User user1 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Desigi Pat"));
             if (user1 == null)
             {
@@ -50,8 +48,8 @@ namespace DP.EX01
                 pictureBox5.Invoke(new Action(() => pictureBox5.Load(emptyPictureUrl)));
                 pictureBox6.Invoke(new Action(() => pictureBox6.Load(emptyPictureUrl)));
             }
-            else {
-
+            else
+            {
                 User user2 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Desig Onn"));
                 User user3 = FacebookUtilities.LoggedInUser.Friends.Find(new Predicate<FacebookWrapper.ObjectModel.User>((user) => user.Name == "Dov Kuala"));
 
@@ -89,14 +87,7 @@ namespace DP.EX01
             else
             {
                 MessageBox.Show("Checked in Succesfully");
-            }
-            
-                    
-        }
-
-        private void CheckInUserControl_Load(object sender, EventArgs e)
-        {
-
+            }            
         }
     }
 }

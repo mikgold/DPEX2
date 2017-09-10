@@ -171,6 +171,7 @@ namespace DP.EX01
                 richTextBoxSelectedEventDescription.Text = selectedEvent.Description;
             }
         }
+
         private void richTextBoxSelectedEventDescription_Leave(object sender, EventArgs e)
         {
             (listBoxEvents.SelectedItem as Event).Description = richTextBoxSelectedEventDescription.Text;
