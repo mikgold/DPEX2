@@ -141,10 +141,9 @@ namespace DP.EX01
         private void fetchAlbums()
         {
             listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Clear()));
-            listBoxAlbums.Invoke(new Action(() => listBoxAlbums.DisplayMember = "Name"));
             foreach (Album album in FacebookUtilities.LoggedInUser.Albums)
             {
-                listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Add(album)));
+                listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Add(new AlbumDescriptionDecorator(album))));
             }
 
             if (FacebookUtilities.LoggedInUser.Albums.Count == 0)
@@ -179,6 +178,26 @@ namespace DP.EX01
         private void richTextBoxSelectedEventDescription_Leave(object sender, EventArgs e)
         {
             (listBoxEvents.SelectedItem as Event).Description = richTextBoxSelectedEventDescription.Text;
+        }
+
+        private void listBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AlbumDescriptionDecorator album = listBoxAlbums.SelectedItem as AlbumDescriptionDecorator;
+            pictureBoxAlbums.LoadAsync(album.PictureSmallURL);
+            labelLikesInAlbum.Text = "loading like count...";
+            labelCreationAlbum.Text = album.CreationTimeDescription();
+
+            new Thread(() =>
+            {
+                int likes = new LikesInAlbumCounterDecorator(album).LikesCount;
+                labelLikesInAlbum.Invoke(new Action(() => { labelLikesInAlbum.Text = likes + " likes"; }));
+            }).Start();
+
+            new Thread(() =>
+            {
+                Photo mostLikedPhoto = new LikesInAlbumCounterDecorator(album).MostLikedPhoto();
+                pictureBoxMostLikedPhoto.LoadAsync(mostLikedPhoto.PictureNormalURL);
+            }).Start();
         }
     }
 }

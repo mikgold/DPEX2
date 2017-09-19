@@ -35,18 +35,23 @@
             this.tabObserveFriendsBio = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelPleaseLogin = new System.Windows.Forms.Label();
-            this.basicOptionsUserControl1 = new DP.EX01.BasicOptionsUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.knowYourFriendsGameUserControl = new DP.EX01.KnowYourFriendsGameUserControl();
             this.tabPageLikeStats = new System.Windows.Forms.TabPage();
-            this.likedYourPostTheMostControl = new DP.EX01.LikedYourPostTheMost();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.checkInUserControl1 = new DP.EX01.CheckInUserControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.observeFriendsStatusUserControl1 = new DP.EX01.ObserveFriendsBioUserControl();
             this.basicOptionsUserControl2 = new DP.EX01.BasicOptionsUserControl();
+=======
+>>>>>>> 11bdfd4ab9966bf91ff3648ef8fae8dfa8e3d381
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.checkBoxPrimaryApp = new System.Windows.Forms.CheckBox();
+            this.basicOptionsUserControl1 = new DP.EX01.BasicOptionsUserControl();
+            this.knowYourFriendsGameUserControl = new DP.EX01.KnowYourFriendsGameUserControl();
+            this.likedYourPostTheMostControl = new DP.EX01.LikedYourPostTheMost();
+            this.checkInUserControl2 = new DP.EX01.CheckInUserControl();
+            this.checkInUserControl1 = new DP.EX01.CheckInUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.tabObserveFriendsBio.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -86,6 +91,7 @@
             // 
             // tabObserveFriendsBio
             // 
+<<<<<<< HEAD
             this.tabObserveFriendsBio.Controls.Add(this.tabPage1);
             this.tabObserveFriendsBio.Controls.Add(this.tabPage2);
             this.tabObserveFriendsBio.Controls.Add(this.tabPageLikeStats);
@@ -97,6 +103,18 @@
             this.tabObserveFriendsBio.Size = new System.Drawing.Size(810, 610);
             this.tabObserveFriendsBio.TabIndex = 3;
             this.tabObserveFriendsBio.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
+=======
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPageLikeStats);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Location = new System.Drawing.Point(13, 89);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(980, 610);
+            this.tabControl.TabIndex = 3;
+            this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
+>>>>>>> 11bdfd4ab9966bf91ff3648ef8fae8dfa8e3d381
             // 
             // tabPage1
             // 
@@ -105,7 +123,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(802, 584);
+            this.tabPage1.Size = new System.Drawing.Size(972, 584);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic Options";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -120,30 +138,16 @@
             this.labelPleaseLogin.TabIndex = 5;
             this.labelPleaseLogin.Text = "You Have to login to use these goodies";
             // 
-            // basicOptionsUserControl1
-            // 
-            this.basicOptionsUserControl1.Location = new System.Drawing.Point(7, 7);
-            this.basicOptionsUserControl1.Name = "basicOptionsUserControl1";
-            this.basicOptionsUserControl1.Size = new System.Drawing.Size(799, 571);
-            this.basicOptionsUserControl1.TabIndex = 1;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.knowYourFriendsGameUserControl);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(802, 584);
+            this.tabPage2.Size = new System.Drawing.Size(972, 584);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Know Your Friends Game";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // knowYourFriendsGameUserControl
-            // 
-            this.knowYourFriendsGameUserControl.Location = new System.Drawing.Point(6, 6);
-            this.knowYourFriendsGameUserControl.Name = "knowYourFriendsGameUserControl";
-            this.knowYourFriendsGameUserControl.Size = new System.Drawing.Size(776, 608);
-            this.knowYourFriendsGameUserControl.TabIndex = 0;
             // 
             // tabPageLikeStats
             // 
@@ -151,28 +155,23 @@
             this.tabPageLikeStats.Location = new System.Drawing.Point(4, 22);
             this.tabPageLikeStats.Name = "tabPageLikeStats";
             this.tabPageLikeStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLikeStats.Size = new System.Drawing.Size(802, 584);
+            this.tabPageLikeStats.Size = new System.Drawing.Size(972, 584);
             this.tabPageLikeStats.TabIndex = 2;
             this.tabPageLikeStats.Text = "Who liked your posts the most? (takes time)";
             this.tabPageLikeStats.UseVisualStyleBackColor = true;
             // 
-            // likedYourPostTheMostControl
-            // 
-            this.likedYourPostTheMostControl.Location = new System.Drawing.Point(7, 19);
-            this.likedYourPostTheMostControl.Name = "likedYourPostTheMostControl";
-            this.likedYourPostTheMostControl.Size = new System.Drawing.Size(777, 531);
-            this.likedYourPostTheMostControl.TabIndex = 0;
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.checkInUserControl2);
             this.tabPage3.Controls.Add(this.checkInUserControl1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(802, 584);
+            this.tabPage3.Size = new System.Drawing.Size(972, 584);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Check In Builder";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // checkInUserControl1
             // 
             this.checkInUserControl1.Location = new System.Drawing.Point(4, 17);
@@ -206,6 +205,8 @@
             this.basicOptionsUserControl2.Size = new System.Drawing.Size(8, 8);
             this.basicOptionsUserControl2.TabIndex = 0;
             // 
+=======
+>>>>>>> 11bdfd4ab9966bf91ff3648ef8fae8dfa8e3d381
             // buttonLogOut
             // 
             this.buttonLogOut.Location = new System.Drawing.Point(12, 60);
@@ -226,11 +227,46 @@
             this.checkBoxPrimaryApp.Text = "connect to secondary app (with more friends) to use the game feature";
             this.checkBoxPrimaryApp.UseVisualStyleBackColor = true;
             // 
+            // basicOptionsUserControl1
+            // 
+            this.basicOptionsUserControl1.Location = new System.Drawing.Point(7, 7);
+            this.basicOptionsUserControl1.Name = "basicOptionsUserControl1";
+            this.basicOptionsUserControl1.Size = new System.Drawing.Size(986, 571);
+            this.basicOptionsUserControl1.TabIndex = 1;
+            // 
+            // knowYourFriendsGameUserControl
+            // 
+            this.knowYourFriendsGameUserControl.Location = new System.Drawing.Point(6, 6);
+            this.knowYourFriendsGameUserControl.Name = "knowYourFriendsGameUserControl";
+            this.knowYourFriendsGameUserControl.Size = new System.Drawing.Size(776, 608);
+            this.knowYourFriendsGameUserControl.TabIndex = 0;
+            // 
+            // likedYourPostTheMostControl
+            // 
+            this.likedYourPostTheMostControl.Location = new System.Drawing.Point(7, 19);
+            this.likedYourPostTheMostControl.Name = "likedYourPostTheMostControl";
+            this.likedYourPostTheMostControl.Size = new System.Drawing.Size(777, 531);
+            this.likedYourPostTheMostControl.TabIndex = 0;
+            // 
+            // checkInUserControl2
+            // 
+            this.checkInUserControl2.Location = new System.Drawing.Point(47, 28);
+            this.checkInUserControl2.Name = "checkInUserControl2";
+            this.checkInUserControl2.Size = new System.Drawing.Size(330, 152);
+            this.checkInUserControl2.TabIndex = 1;
+            // 
+            // checkInUserControl1
+            // 
+            this.checkInUserControl1.Location = new System.Drawing.Point(4, 17);
+            this.checkInUserControl1.Name = "checkInUserControl1";
+            this.checkInUserControl1.Size = new System.Drawing.Size(584, 514);
+            this.checkInUserControl1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 704);
+            this.ClientSize = new System.Drawing.Size(1000, 704);
             this.Controls.Add(this.checkBoxPrimaryApp);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.tabObserveFriendsBio);
@@ -269,8 +305,12 @@
         private System.Windows.Forms.CheckBox checkBoxPrimaryApp;
         private System.Windows.Forms.TabPage tabPage3;
         private CheckInUserControl checkInUserControl1;
+<<<<<<< HEAD
         private System.Windows.Forms.TabPage tabPage4;
         private BasicOptionsUserControl basicOptionsUserControl2;
         private ObserveFriendsBioUserControl observeFriendsStatusUserControl1;
+=======
+        private CheckInUserControl checkInUserControl2;
+>>>>>>> 11bdfd4ab9966bf91ff3648ef8fae8dfa8e3d381
     }
 }

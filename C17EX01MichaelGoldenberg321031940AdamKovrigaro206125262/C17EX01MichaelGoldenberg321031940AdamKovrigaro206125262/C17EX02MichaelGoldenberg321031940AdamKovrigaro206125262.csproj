@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDescriptionDecorator.cs" />
+    <Compile Include="BaseAlbumDecorator.cs" />
     <Compile Include="BasicOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,7 +74,12 @@
     </Compile>
     <Compile Include="FacebookUtilities.cs" />
     <Compile Include="AbstractCheckInBuilder.cs" />
+<<<<<<< HEAD
     <Compile Include="IStrategy.cs" />
+=======
+    <Compile Include="IAlbum.cs" />
+    <Compile Include="LikesInAlbumCounterDecorator.cs" />
+>>>>>>> 11bdfd4ab9966bf91ff3648ef8fae8dfa8e3d381
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

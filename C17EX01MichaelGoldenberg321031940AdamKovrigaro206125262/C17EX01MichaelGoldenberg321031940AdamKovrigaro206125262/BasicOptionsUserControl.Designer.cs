@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelSelectFriend = new System.Windows.Forms.Label();
             this.pictureBoxSelectedFriend = new System.Windows.Forms.PictureBox();
             this.listBoxEvents = new System.Windows.Forms.ListBox();
@@ -53,8 +54,18 @@
             this.richTextBoxSelectedEvent = new System.Windows.Forms.RichTextBox();
             this.labelSelectedEventDescription = new System.Windows.Forms.Label();
             this.richTextBoxSelectedEventDescription = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxAlbums = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.labelTotLikes = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelLikesInAlbum = new System.Windows.Forms.Label();
+            this.labelCreationAlbum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxMostLikedPhoto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedFriend)).BeginInit();
             this.panelSelectedFriend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAlbums)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMostLikedPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSelectFriend
@@ -101,6 +112,7 @@
             this.listBoxAlbums.Name = "listBoxAlbums";
             this.listBoxAlbums.Size = new System.Drawing.Size(179, 173);
             this.listBoxAlbums.TabIndex = 28;
+            this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
             // 
             // buttonAlbums
             // 
@@ -252,7 +264,7 @@
             // 
             this.richTextBoxSelectedEvent.Location = new System.Drawing.Point(512, 103);
             this.richTextBoxSelectedEvent.Name = "richTextBoxSelectedEvent";
-            this.richTextBoxSelectedEvent.Size = new System.Drawing.Size(245, 116);
+            this.richTextBoxSelectedEvent.Size = new System.Drawing.Size(409, 116);
             this.richTextBoxSelectedEvent.TabIndex = 36;
             this.richTextBoxSelectedEvent.Text = string.Empty;
             // 
@@ -269,15 +281,88 @@
             // 
             this.richTextBoxSelectedEventDescription.Location = new System.Drawing.Point(518, 262);
             this.richTextBoxSelectedEventDescription.Name = "richTextBoxSelectedEventDescription";
-            this.richTextBoxSelectedEventDescription.Size = new System.Drawing.Size(239, 72);
+            this.richTextBoxSelectedEventDescription.Size = new System.Drawing.Size(403, 72);
             this.richTextBoxSelectedEventDescription.TabIndex = 39;
             this.richTextBoxSelectedEventDescription.Text = string.Empty;
             this.richTextBoxSelectedEventDescription.Leave += new System.EventHandler(this.richTextBoxSelectedEventDescription_Leave);
+            // 
+            // pictureBoxAlbums
+            // 
+            this.pictureBoxAlbums.Location = new System.Drawing.Point(806, 405);
+            this.pictureBoxAlbums.Name = "pictureBoxAlbums";
+            this.pictureBoxAlbums.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxAlbums.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAlbums.TabIndex = 40;
+            this.pictureBoxAlbums.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // labelTotLikes
+            // 
+            this.labelTotLikes.AutoSize = true;
+            this.labelTotLikes.Location = new System.Drawing.Point(806, 468);
+            this.labelTotLikes.Name = "labelTotLikes";
+            this.labelTotLikes.Size = new System.Drawing.Size(79, 13);
+            this.labelTotLikes.TabIndex = 43;
+            this.labelTotLikes.Text = "Likes In Album:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(806, 496);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Creation Date:";
+            // 
+            // labelLikesInAlbum
+            // 
+            this.labelLikesInAlbum.AutoSize = true;
+            this.labelLikesInAlbum.Location = new System.Drawing.Point(892, 468);
+            this.labelLikesInAlbum.Name = "labelLikesInAlbum";
+            this.labelLikesInAlbum.Size = new System.Drawing.Size(0, 13);
+            this.labelLikesInAlbum.TabIndex = 45;
+            // 
+            // labelCreationAlbum
+            // 
+            this.labelCreationAlbum.AutoSize = true;
+            this.labelCreationAlbum.Location = new System.Drawing.Point(892, 496);
+            this.labelCreationAlbum.Name = "labelCreationAlbum";
+            this.labelCreationAlbum.Size = new System.Drawing.Size(0, 13);
+            this.labelCreationAlbum.TabIndex = 46;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(809, 513);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "most liked photo:";
+            // 
+            // pictureBoxMostLikedPhoto
+            // 
+            this.pictureBoxMostLikedPhoto.Location = new System.Drawing.Point(809, 530);
+            this.pictureBoxMostLikedPhoto.Name = "pictureBoxMostLikedPhoto";
+            this.pictureBoxMostLikedPhoto.Size = new System.Drawing.Size(61, 37);
+            this.pictureBoxMostLikedPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMostLikedPhoto.TabIndex = 48;
+            this.pictureBoxMostLikedPhoto.TabStop = false;
             // 
             // BasicOptionsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBoxMostLikedPhoto);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCreationAlbum);
+            this.Controls.Add(this.labelLikesInAlbum);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelTotLikes);
+            this.Controls.Add(this.pictureBoxAlbums);
             this.Controls.Add(this.richTextBoxSelectedEventDescription);
             this.Controls.Add(this.labelSelectedEventDescription);
             this.Controls.Add(this.richTextBoxSelectedEvent);
@@ -298,10 +383,12 @@
             this.Controls.Add(this.buttonCheckIns);
             this.Controls.Add(this.listBoxCheckIns);
             this.Name = "BasicOptionsUserControl";
-            this.Size = new System.Drawing.Size(812, 602);
+            this.Size = new System.Drawing.Size(956, 602);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedFriend)).EndInit();
             this.panelSelectedFriend.ResumeLayout(false);
             this.panelSelectedFriend.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAlbums)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMostLikedPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +420,13 @@
         private System.Windows.Forms.RichTextBox richTextBoxSelectedEvent;
         private System.Windows.Forms.Label labelSelectedEventDescription;
         private System.Windows.Forms.RichTextBox richTextBoxSelectedEventDescription;
+        private System.Windows.Forms.PictureBox pictureBoxAlbums;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelLikesInAlbum;
+        private System.Windows.Forms.Label labelCreationAlbum;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxMostLikedPhoto;
+        private System.Windows.Forms.Label labelTotLikes;
     }
 }
