@@ -21,6 +21,10 @@ namespace DP.EX01
             get { return m_LoggedInUser; }
         }
 
+        private static IStrategy[] m_strategies = { new SortByBirthday(), new SortFriendsByGender(), new SortByName() };
+
+        public static IStrategy[] Strategies { get { return m_strategies; } }
+
         private static List<UserLog> m_changeLog;
 
         public static List<UserLog> ChangeLog { get { return m_changeLog; } }

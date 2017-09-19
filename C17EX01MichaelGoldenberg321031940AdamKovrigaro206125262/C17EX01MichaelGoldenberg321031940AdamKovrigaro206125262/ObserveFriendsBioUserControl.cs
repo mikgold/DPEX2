@@ -13,8 +13,6 @@ namespace DP.EX01
 {
     public partial class ObserveFriendsBioUserControl : UserControl
     {
-        private IStrategy[] strategies = { new SortByBirthday(), new SortFriendsByGender(), new SortByName()};
-
         public ObserveFriendsBioUserControl()
         {
             InitializeComponent();
@@ -24,7 +22,7 @@ namespace DP.EX01
         {
             listBoxOrderMethod.Invoke(new Action(() => listBoxOrderMethod.Items.Clear()));
             listBoxOrderMethod.Invoke(new Action(() => listBoxOrderMethod.DisplayMember = "Name"));
-            foreach (IStrategy strategy in strategies)
+            foreach (IStrategy strategy in FacebookUtilities.Strategies)
             {
                 listBoxOrderMethod.Invoke(new Action(() => listBoxOrderMethod.Items.Add(strategy)));
             }
@@ -54,12 +52,6 @@ namespace DP.EX01
         private void buttonFetchMethods_Click(object sender, EventArgs e)
         {
             Task.Run(()=> { PopulateStrategies(); });
-        }
-
-        private void buttonAttach_Click(object sender, EventArgs e)
-        {
-            //FacebookUtilities.m_notifyDel+=
-            //listBoxFriends.SelectedItem as User;
         }
 
         private void buttonFetchLog_Click(object sender, EventArgs e)
