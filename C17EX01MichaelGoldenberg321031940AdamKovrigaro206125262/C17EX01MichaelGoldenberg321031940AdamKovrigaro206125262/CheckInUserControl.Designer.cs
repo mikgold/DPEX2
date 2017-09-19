@@ -1,6 +1,6 @@
 ﻿namespace DP.EX01
 {
-    partial class CheckInUserControl
+    public partial class CheckInUserControl
     {
         /// <summary> 
         /// Required designer variable.
