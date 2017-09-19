@@ -1,6 +1,6 @@
 ﻿namespace DP.EX01
 {
-    partial class ObserveFriendsStatusUserControl
+    partial class ObserveFriendsBioUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,6 +35,9 @@
             this.listBoxFriendsList = new System.Windows.Forms.ListBox();
             this.labelFriend = new System.Windows.Forms.Label();
             this.buttonFetchMethods = new System.Windows.Forms.Button();
+            this.listBoxFriendsBioLog = new System.Windows.Forms.ListBox();
+            this.labelFriendBioLog = new System.Windows.Forms.Label();
+            this.buttonFetchLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxOrderMethod
@@ -57,16 +60,17 @@
             // 
             // buttonAttach
             // 
-            this.buttonAttach.Location = new System.Drawing.Point(60, 256);
+            this.buttonAttach.Location = new System.Drawing.Point(218, 256);
             this.buttonAttach.Name = "buttonAttach";
             this.buttonAttach.Size = new System.Drawing.Size(75, 23);
             this.buttonAttach.TabIndex = 6;
             this.buttonAttach.Text = "Attach";
             this.buttonAttach.UseVisualStyleBackColor = true;
+            this.buttonAttach.Click += new System.EventHandler(this.buttonAttach_Click);
             // 
             // buttonDetach
             // 
-            this.buttonDetach.Location = new System.Drawing.Point(342, 256);
+            this.buttonDetach.Location = new System.Drawing.Point(312, 256);
             this.buttonDetach.Name = "buttonDetach";
             this.buttonDetach.Size = new System.Drawing.Size(75, 23);
             this.buttonDetach.TabIndex = 7;
@@ -100,10 +104,40 @@
             this.buttonFetchMethods.UseVisualStyleBackColor = true;
             this.buttonFetchMethods.Click += new System.EventHandler(this.buttonFetchMethods_Click);
             // 
+            // listBoxFriendsBioLog
+            // 
+            this.listBoxFriendsBioLog.FormattingEnabled = true;
+            this.listBoxFriendsBioLog.Location = new System.Drawing.Point(430, 57);
+            this.listBoxFriendsBioLog.Name = "listBoxFriendsBioLog";
+            this.listBoxFriendsBioLog.Size = new System.Drawing.Size(120, 186);
+            this.listBoxFriendsBioLog.TabIndex = 11;
+            // 
+            // labelFriendBioLog
+            // 
+            this.labelFriendBioLog.AutoSize = true;
+            this.labelFriendBioLog.Location = new System.Drawing.Point(427, 27);
+            this.labelFriendBioLog.Name = "labelFriendBioLog";
+            this.labelFriendBioLog.Size = new System.Drawing.Size(80, 13);
+            this.labelFriendBioLog.TabIndex = 12;
+            this.labelFriendBioLog.Text = "Friends bio logs";
+            // 
+            // buttonFetchLog
+            // 
+            this.buttonFetchLog.Location = new System.Drawing.Point(449, 256);
+            this.buttonFetchLog.Name = "buttonFetchLog";
+            this.buttonFetchLog.Size = new System.Drawing.Size(75, 23);
+            this.buttonFetchLog.TabIndex = 13;
+            this.buttonFetchLog.Text = "Fetch Log";
+            this.buttonFetchLog.UseVisualStyleBackColor = true;
+            this.buttonFetchLog.Click += new System.EventHandler(this.buttonFetchLog_Click);
+            // 
             // ObserveFriendsStatusUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonFetchLog);
+            this.Controls.Add(this.labelFriendBioLog);
+            this.Controls.Add(this.listBoxFriendsBioLog);
             this.Controls.Add(this.buttonFetchMethods);
             this.Controls.Add(this.labelFriend);
             this.Controls.Add(this.listBoxFriendsList);
@@ -112,7 +146,7 @@
             this.Controls.Add(this.labelFilterMethod);
             this.Controls.Add(this.listBoxOrderMethod);
             this.Name = "ObserveFriendsStatusUserControl";
-            this.Size = new System.Drawing.Size(522, 378);
+            this.Size = new System.Drawing.Size(614, 378);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +161,8 @@
         private System.Windows.Forms.ListBox listBoxFriendsList;
         private System.Windows.Forms.Label labelFriend;
         private System.Windows.Forms.Button buttonFetchMethods;
+        private System.Windows.Forms.ListBox listBoxFriendsBioLog;
+        private System.Windows.Forms.Label labelFriendBioLog;
+        private System.Windows.Forms.Button buttonFetchLog;
     }
 }

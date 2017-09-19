@@ -19,7 +19,7 @@ namespace DP.EX01
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 200;
             FacebookWrapper.FacebookService.s_FbApiVersion = 2.8f;
-            tabObserveFriendsStatus.Enabled = false;
+            tabObserveFriendsBio.Enabled = false;
             buttonLogOut.Hide();     
         }
 
@@ -69,7 +69,7 @@ namespace DP.EX01
             lblConnect.Location = new Point(lblConnect.Location.X - 95, lblConnect.Location.Y);
             btnLogin.Hide();
             buttonLogOut.Show();
-            tabObserveFriendsStatus.Enabled = true;
+            tabObserveFriendsBio.Enabled = true;
             labelPleaseLogin.Hide();
             checkBoxPrimaryApp.Hide();
         }
@@ -86,12 +86,12 @@ namespace DP.EX01
             lblConnect.ForeColor = Color.Red;
             lblConnect.Location = new Point(lblConnect.Location.X + 95, lblConnect.Location.Y);
             pictureBoxProfile.Image = null;
-            tabObserveFriendsStatus.Enabled = false;
+            tabObserveFriendsBio.Enabled = false;
             labelPleaseLogin.Show();
             btnLogin.Show();
             buttonLogOut.Hide();
             checkBoxPrimaryApp.Show();
-            tabObserveFriendsStatus.SelectedIndex = 0;
+            tabObserveFriendsBio.SelectedIndex = 0;
         }                
     }
 }

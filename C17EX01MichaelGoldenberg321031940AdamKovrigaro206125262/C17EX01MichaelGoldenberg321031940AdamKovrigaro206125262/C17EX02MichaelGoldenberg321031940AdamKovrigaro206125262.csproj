@@ -92,12 +92,11 @@
     <Compile Include="LikedYourPostTheMost.Designer.cs">
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObservedUser.cs" />
-    <Compile Include="ObserveFriendsStatusUserControl.cs">
+    <Compile Include="ObserveFriendsBioUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ObserveFriendsStatusUserControl.Designer.cs">
-      <DependentUpon>ObserveFriendsStatusUserControl.cs</DependentUpon>
+    <Compile Include="ObserveFriendsBioUserControl.Designer.cs">
+      <DependentUpon>ObserveFriendsBioUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -110,6 +109,7 @@
     <Compile Include="SortByName.cs" />
     <Compile Include="SortFriendsByGender.cs" />
     <Compile Include="UserFacade.cs" />
+    <Compile Include="UserLog.cs" />
     <EmbeddedResource Include="BasicOptionsUserControl.resx">
       <DependentUpon>BasicOptionsUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,8 +125,8 @@
     <EmbeddedResource Include="LikedYourPostTheMost.resx">
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ObserveFriendsStatusUserControl.resx">
-      <DependentUpon>ObserveFriendsStatusUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="ObserveFriendsBioUserControl.resx">
+      <DependentUpon>ObserveFriendsBioUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

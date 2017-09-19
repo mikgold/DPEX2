@@ -20,7 +20,26 @@ namespace DP.EX01
         {
             get { return m_LoggedInUser; }
         }
+
+        private static List<UserLog> m_changeLog;
+
+        public static List<UserLog> ChangeLog { get { return m_changeLog; } }
+
+        public delegate void notifyDel(object sender);
+        public static notifyDel NotifyDel;
+
+        public static void AddLogNotify(object i_user)
+        {
+            UserLog userLog = new UserLog(i_user as User);
+            ChangeLog.Add(userLog);
+        }
         
+        static FacebookUtilities()
+        {
+            NotifyDel = new notifyDel(AddLogNotify);
+            m_changeLog = new List<UserLog>();
+        }
+
         public static User LoginToFacebookApp(bool i_isPrimaryApp = true)
         {
             /// "user_groups" (This permission is only available for apps using Graph API version v2.3 or older.)

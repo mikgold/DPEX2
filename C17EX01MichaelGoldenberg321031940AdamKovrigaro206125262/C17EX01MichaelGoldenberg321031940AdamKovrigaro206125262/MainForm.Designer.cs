@@ -32,7 +32,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblConnect = new System.Windows.Forms.Label();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
-            this.tabObserveFriendsStatus = new System.Windows.Forms.TabControl();
+            this.tabObserveFriendsBio = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelPleaseLogin = new System.Windows.Forms.Label();
             this.basicOptionsUserControl1 = new DP.EX01.BasicOptionsUserControl();
@@ -43,12 +43,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.checkInUserControl1 = new DP.EX01.CheckInUserControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.observeFriendsStatusUserControl1 = new DP.EX01.ObserveFriendsBioUserControl();
             this.basicOptionsUserControl2 = new DP.EX01.BasicOptionsUserControl();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.checkBoxPrimaryApp = new System.Windows.Forms.CheckBox();
-            this.observeFriendsStatusUserControl1 = new DP.EX01.ObserveFriendsStatusUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
-            this.tabObserveFriendsStatus.SuspendLayout();
+            this.tabObserveFriendsBio.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPageLikeStats.SuspendLayout();
@@ -84,19 +84,19 @@
             this.pictureBoxProfile.TabIndex = 2;
             this.pictureBoxProfile.TabStop = false;
             // 
-            // tabObserveFriendsStatus
+            // tabObserveFriendsBio
             // 
-            this.tabObserveFriendsStatus.Controls.Add(this.tabPage1);
-            this.tabObserveFriendsStatus.Controls.Add(this.tabPage2);
-            this.tabObserveFriendsStatus.Controls.Add(this.tabPageLikeStats);
-            this.tabObserveFriendsStatus.Controls.Add(this.tabPage3);
-            this.tabObserveFriendsStatus.Controls.Add(this.tabPage4);
-            this.tabObserveFriendsStatus.Location = new System.Drawing.Point(13, 89);
-            this.tabObserveFriendsStatus.Name = "tabObserveFriendsStatus";
-            this.tabObserveFriendsStatus.SelectedIndex = 0;
-            this.tabObserveFriendsStatus.Size = new System.Drawing.Size(810, 610);
-            this.tabObserveFriendsStatus.TabIndex = 3;
-            this.tabObserveFriendsStatus.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
+            this.tabObserveFriendsBio.Controls.Add(this.tabPage1);
+            this.tabObserveFriendsBio.Controls.Add(this.tabPage2);
+            this.tabObserveFriendsBio.Controls.Add(this.tabPageLikeStats);
+            this.tabObserveFriendsBio.Controls.Add(this.tabPage3);
+            this.tabObserveFriendsBio.Controls.Add(this.tabPage4);
+            this.tabObserveFriendsBio.Location = new System.Drawing.Point(13, 89);
+            this.tabObserveFriendsBio.Name = "tabObserveFriendsBio";
+            this.tabObserveFriendsBio.SelectedIndex = 0;
+            this.tabObserveFriendsBio.Size = new System.Drawing.Size(810, 610);
+            this.tabObserveFriendsBio.TabIndex = 3;
+            this.tabObserveFriendsBio.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
             // 
             // tabPage1
             // 
@@ -189,8 +189,15 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(802, 584);
             this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "Observe friends status";
+            this.tabPage4.Text = "Observe friends bio";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // observeFriendsStatusUserControl1
+            // 
+            this.observeFriendsStatusUserControl1.Location = new System.Drawing.Point(0, 3);
+            this.observeFriendsStatusUserControl1.Name = "observeFriendsStatusUserControl1";
+            this.observeFriendsStatusUserControl1.Size = new System.Drawing.Size(629, 378);
+            this.observeFriendsStatusUserControl1.TabIndex = 1;
             // 
             // basicOptionsUserControl2
             // 
@@ -219,13 +226,6 @@
             this.checkBoxPrimaryApp.Text = "connect to secondary app (with more friends) to use the game feature";
             this.checkBoxPrimaryApp.UseVisualStyleBackColor = true;
             // 
-            // observeFriendsStatusUserControl1
-            // 
-            this.observeFriendsStatusUserControl1.Location = new System.Drawing.Point(0, 3);
-            this.observeFriendsStatusUserControl1.Name = "observeFriendsStatusUserControl1";
-            this.observeFriendsStatusUserControl1.Size = new System.Drawing.Size(522, 378);
-            this.observeFriendsStatusUserControl1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,14 +233,14 @@
             this.ClientSize = new System.Drawing.Size(835, 704);
             this.Controls.Add(this.checkBoxPrimaryApp);
             this.Controls.Add(this.buttonLogOut);
-            this.Controls.Add(this.tabObserveFriendsStatus);
+            this.Controls.Add(this.tabObserveFriendsBio);
             this.Controls.Add(this.pictureBoxProfile);
             this.Controls.Add(this.lblConnect);
             this.Controls.Add(this.btnLogin);
             this.Name = "MainForm";
             this.Text = "Facebook Demo App";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
-            this.tabObserveFriendsStatus.ResumeLayout(false);
+            this.tabObserveFriendsBio.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -257,7 +257,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblConnect;
         private System.Windows.Forms.PictureBox pictureBoxProfile;
-        private System.Windows.Forms.TabControl tabObserveFriendsStatus;
+        private System.Windows.Forms.TabControl tabObserveFriendsBio;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPageLikeStats;
@@ -271,6 +271,6 @@
         private CheckInUserControl checkInUserControl1;
         private System.Windows.Forms.TabPage tabPage4;
         private BasicOptionsUserControl basicOptionsUserControl2;
-        private ObserveFriendsStatusUserControl observeFriendsStatusUserControl1;
+        private ObserveFriendsBioUserControl observeFriendsStatusUserControl1;
     }
 }

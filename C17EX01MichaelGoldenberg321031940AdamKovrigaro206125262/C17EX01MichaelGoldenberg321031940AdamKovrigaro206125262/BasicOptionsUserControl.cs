@@ -157,8 +157,12 @@ namespace DP.EX01
 
         private void textBoxSelectedFriendBio_Leave(object sender, EventArgs e)
         {
-            User selectedFriend = listBoxFriends.SelectedItem as User; 
-            selectedFriend.Bio = textBoxSelectedFriendBio.Text;
+            User selectedFriend = listBoxFriends.SelectedItem as User;
+            if (selectedFriend.Bio != textBoxSelectedFriendBio.Text)
+            {
+                selectedFriend.Bio = textBoxSelectedFriendBio.Text;
+                FacebookUtilities.NotifyDel.Invoke(selectedFriend);
+            }
         }
 
         private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)

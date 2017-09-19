@@ -11,11 +11,11 @@ using FacebookWrapper.ObjectModel;
 
 namespace DP.EX01
 {
-    public partial class ObserveFriendsStatusUserControl : UserControl
+    public partial class ObserveFriendsBioUserControl : UserControl
     {
         private IStrategy[] strategies = { new SortByBirthday(), new SortFriendsByGender(), new SortByName()};
 
-        public ObserveFriendsStatusUserControl()
+        public ObserveFriendsBioUserControl()
         {
             InitializeComponent();
         }
@@ -36,8 +36,6 @@ namespace DP.EX01
             listBoxFriendsList.Invoke(new Action(() => listBoxFriendsList.DisplayMember = "Name"));
             foreach (User friend in i_friendsList)
             {
-                FacebookWrapper.ObjectModel.User.eRelationshipStatus er = (FacebookWrapper.ObjectModel.User.eRelationshipStatus)friend.RelationshipStatus;
-                FacebookObjectCollection<Status> s = friend.Statuses; ;
                 listBoxFriendsList.Invoke(new Action(() => listBoxFriendsList.Items.Add(friend)));
             }
 
@@ -56,6 +54,21 @@ namespace DP.EX01
         private void buttonFetchMethods_Click(object sender, EventArgs e)
         {
             Task.Run(()=> { PopulateStrategies(); });
+        }
+
+        private void buttonAttach_Click(object sender, EventArgs e)
+        {
+            //FacebookUtilities.m_notifyDel+=
+            //listBoxFriends.SelectedItem as User;
+        }
+
+        private void buttonFetchLog_Click(object sender, EventArgs e)
+        {
+            listBoxFriendsBioLog.Items.Clear();
+            foreach (UserLog ul in FacebookUtilities.ChangeLog)
+            {
+                listBoxFriendsBioLog.Items.Add(ul.User.FirstName + ul.ChangeTime.ToString());
+            }
         }
     }
 }
