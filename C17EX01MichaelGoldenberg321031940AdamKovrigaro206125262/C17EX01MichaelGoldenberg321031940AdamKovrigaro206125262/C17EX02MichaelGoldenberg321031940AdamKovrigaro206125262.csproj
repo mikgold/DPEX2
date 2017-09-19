@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="FacebookUtilities.cs" />
     <Compile Include="AbstractCheckInBuilder.cs" />
+    <Compile Include="IStrategy.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +92,23 @@
     <Compile Include="LikedYourPostTheMost.Designer.cs">
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObservedUser.cs" />
+    <Compile Include="ObserveFriendsStatusUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObserveFriendsStatusUserControl.Designer.cs">
+      <DependentUpon>ObserveFriendsStatusUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SortByFriendCount.cs" />
+    <Compile Include="SortByBirthday.cs" />
+    <Compile Include="SortByName.cs" />
+    <Compile Include="SortFriendsByGender.cs" />
     <Compile Include="UserFacade.cs" />
     <EmbeddedResource Include="BasicOptionsUserControl.resx">
       <DependentUpon>BasicOptionsUserControl.cs</DependentUpon>
@@ -112,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LikedYourPostTheMost.resx">
       <DependentUpon>LikedYourPostTheMost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObserveFriendsStatusUserControl.resx">
+      <DependentUpon>ObserveFriendsStatusUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

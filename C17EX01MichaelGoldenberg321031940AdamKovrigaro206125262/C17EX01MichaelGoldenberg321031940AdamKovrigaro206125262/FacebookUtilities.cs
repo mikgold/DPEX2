@@ -132,5 +132,37 @@ namespace DP.EX01
 
             return likesDitcionary;
         }
+
+        public static List<User> getOrderedFriendsList(IStrategy i_strategy)
+        {
+            List<User> friendsList = LoggedInUser.Friends.ToList();
+            List<User> sortedFriendsList = new List<User>();
+            if (friendsList.Count() > 0)
+            {
+                sortedFriendsList.Add(friendsList[0]);
+            }
+            for (int i=1;i< friendsList.Count();i++)
+            {
+                insertIntoSortedList(sortedFriendsList, friendsList[i], i_strategy);
+            }
+            return sortedFriendsList;
+        }
+
+        private static void insertIntoSortedList(List<User> i_lst, User i_friend, IStrategy i_strategy)
+        {
+            bool found = false;
+            for (int i=0; i< i_lst.Count() && !found ;i++)
+            {
+                if (i_strategy.DoOperation(i_lst[i],i_friend) > 0)
+                {
+                    i_lst.Insert(i, i_friend);
+                    found = true;
+                }
+            }
+            if (!found)
+            {
+                i_lst.Add(i_friend);
+            }
+        }
     }
 }
